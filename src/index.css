@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&family=Inter:wght@400;500;600&family=Roboto+Serif:ital,opsz,wght@1,8..144,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Epilogue", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Roboto Serif", ui-serif, Georgia, serif;
+
+  --color-brand-white: #FFFFFF;
+  --color-brand-dark: #3D3A3C;
+  --color-brand-orange: #FF6600;
+  --color-brand-red: #F54041;
+}
+
+@layer base {
+  :root {
+    --bg-primary: var(--color-brand-white);
+    --text-primary: var(--color-brand-dark);
+    --border-color: rgba(61, 58, 60, 0.15);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary: var(--color-brand-dark);
+      --text-primary: var(--color-brand-white);
+      --border-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom utilities for the Swiss Grid and Brackets */
+.grid-lines {
+  background-image: 
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+  background-size: 25% 100%, 100% 25%;
+}
+
+.bracket-hover {
+  position: relative;
+}
+
+.bracket-hover::before,
+.bracket-hover::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.bracket-hover::before {
+  top: 0;
+  left: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.bracket-hover:hover::before {
+  border-top-color: var(--color-brand-orange);
+  border-left-color: var(--color-brand-orange);
+}
+
+.bracket-hover::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+.bracket-hover:hover::after {
+  border-bottom-color: var(--color-brand-orange);
+  border-right-color: var(--color-brand-orange);
+}
+
+.crosshair {
+  position: relative;
+}
+.crosshair::before, .crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-brand-orange);
+}
+.crosshair::before {
+  width: 1px;
+  height: 9px;
+  top: -4px;
+  left: 0;
+}
+.crosshair::after {
+  width: 9px;
+  height: 1px;
+  top: 0;
+  left: -4px;
+}
