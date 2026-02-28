@@ -4,6 +4,8 @@ import { AnimatePresence } from 'motion/react';
 import { Navbar, Footer } from './components/Shared';
 import Home from './pages/Home';
 import Agency from './pages/Agency';
+import Services from './pages/Services';
+import Work from './pages/Work';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -13,6 +15,8 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/agency" element={<Agency />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/work" element={<Work />} />
       </Routes>
     </AnimatePresence>
   );

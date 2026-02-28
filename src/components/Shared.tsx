@@ -34,8 +34,8 @@ export const Navbar = () => {
       </Link>
       
       <div className="hidden md:flex items-center gap-8 font-sans text-sm font-medium uppercase tracking-widest">
-        <Link to="/#work" className="hover:text-[#FF6600] transition-colors">Work</Link>
-        <Link to="/#services" className="hover:text-[#FF6600] transition-colors">Services</Link>
+        <Link to="/work" className="hover:text-[#FF6600] transition-colors">Work</Link>
+        <Link to="/services" className="hover:text-[#FF6600] transition-colors">Serviços</Link>
         <Link to="/agency" className="hover:text-[#FF6600] transition-colors">A Agência</Link>
       </div>
       
@@ -74,8 +74,8 @@ export const Footer = () => {
           <motion.div variants={fadeUp}>
             <h4 className="font-sans text-xs font-bold uppercase tracking-widest mb-6 border-b border-[#3D3A3C]/20 pb-4">Navigation</h4>
             <ul className="space-y-4 font-display font-bold text-xl uppercase">
-              <li><Link to="/#work" className="hover:text-white transition-colors">Work</Link></li>
-              <li><Link to="/#services" className="hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/work" className="hover:text-white transition-colors">Work</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Serviços</Link></li>
               <li><Link to="/agency" className="hover:text-white transition-colors">A Agência</Link></li>
               <li><Link to="/#contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
